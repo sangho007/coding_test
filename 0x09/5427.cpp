@@ -52,8 +52,8 @@ int main(){
                 q1.push({nx,ny});
             }
         }
-        int flag = 1;
-        while(!q2.empty()){
+        bool flag = 1;
+        while(!q2.empty() && flag){
             auto cur = q2.front();q2.pop();
             for(int dir = 0; dir < 4; dir++){
                 int nx = cur.X + dx[dir];
@@ -64,7 +64,7 @@ int main(){
                     break;
                 }
                 if(board[nx][ny] == '#' || dist2[nx][ny] >= 0) continue;
-                if(dist2[nx][ny] != -1 && dist1[nx][ny] <= dist2[cur.X][cur.Y]+1) continue;
+                if(dist1[nx][ny]!= -1 && dist1[nx][ny] <= dist2[cur.X][cur.Y]+1) continue; //왜지???
                 dist2[nx][ny] = dist2[cur.X][cur.Y] + 1;
                 q2.push({nx,ny});
             }

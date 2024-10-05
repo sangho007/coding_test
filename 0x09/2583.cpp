@@ -34,7 +34,7 @@ int main(){
     //     }
     //     cout << endl;
     // }
-    
+    //
 
     vector<int> v;
     for(int i = 0; i < n; i++){
